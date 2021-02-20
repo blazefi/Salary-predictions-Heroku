@@ -16,14 +16,15 @@
   <div class="login">
     <h1>Salary Prediction</h1>
     <h3>Pls fill integers as input <br> </h3>
-    <p> Rating            : Any integer (0 - 5)         <br> 
+    <pre> 
+        Rating            : Any integer (0 - 5)         <br> 
         Net Experience    : Any positive integer        <br>
         Junior            : 1 if junior position else 0 <br>
         Senior            : 1 if senior position else 0 <br>
         Bachelor          : 1 if senior position else 0 <br>
         Masters           : 1 if senior position else 0 <br>
         Posting Frequency : Any positive integer <br>
-    </p>
+    </pre>
     <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post">
       <input type="text" name="rating " placeholder="Rating(0-5)" required="required" />
