@@ -17,14 +17,15 @@ def home():
 def predict():   
     #'rating','net_experience', 'jr', 'senior', 'bachelor', 'masters', 'posting_frequency'
      
-    x_in = [int(x) for x in request.form.values()]
+    x_in = [float(x) for x in request.form.values()]
     x_in = np.array(x_in).reshape(1,-1)
 
     pred = best_model.predict(x_in)
     
-    prediction = round(np.exp(pred), 2)
+    #prediction = np.round(np.exp(pred), 2)
+    prediction = np.exp(pred)
     
-    return render_template('index.html', prediction_text='Your predicted salary is {}'.format(prediction))
+    return render_template('index.html', prediction_text='Your predicted annual salary is {}'.format(prediction))
 
 
 if __name__ == '__main__':
