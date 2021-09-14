@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, render_template
 import numpy as np
 import pickle
 import pandas as pd
+import os
 from utils.nlp_utils import Word2VecVectorizer
 from utils.data_preprocessing import Preprocess
 from gensim.models import KeyedVectors
